@@ -5,3 +5,17 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+<table class="table">
+
+    <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+    </tr>
+    @foreach (var c in ViewBag.CustomerList)
+    {
+        <tr>
+            <td>@c.CustomerID</td>
+            <td>@c.CompanyName</td>
+        </tr>
+    }
+</table>

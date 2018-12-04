@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EntityFramework.Models;
 
 namespace EntityFramework.Controllers
 {
@@ -15,6 +16,11 @@ namespace EntityFramework.Controllers
 
         public ActionResult About()
         {
+            //1. Create an ORM object
+            NorthwindEntities ORM = new NorthwindEntities();
+
+            ViewBag.CustomerList = ORM.Customers.ToList();
+
             ViewBag.Message = "Your application description page.";
 
             return View();
